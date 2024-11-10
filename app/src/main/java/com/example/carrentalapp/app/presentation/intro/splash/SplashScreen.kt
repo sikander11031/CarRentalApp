@@ -21,7 +21,6 @@ import network.chaintech.sdpcomposemultiplatform.sdp
 
 @Composable
 fun SplashScreen() {
-    // Use remember to avoid recomputation
     val appLogoMargin =  100.sdp
     val carLogoMargin = 35.sdp
     ConstraintLayout(
