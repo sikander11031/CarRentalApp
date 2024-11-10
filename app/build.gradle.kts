@@ -71,6 +71,8 @@ dependencies {
     implementation ("androidx.constraintlayout:constraintlayout-compose:1.1.0")
      //Sdp,Ssp
     implementation("network.chaintech:sdp-ssp-compose-multiplatform:1.0.4")
-
+    //Glide
+    implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
+    implementation ("com.google.accompanist:accompanist-glide:0.24.15-beta")
 
 }

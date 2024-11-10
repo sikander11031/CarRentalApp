@@ -17,10 +17,13 @@ import androidx.constraintlayout.compose.Dimension
 import com.example.carrentalapp.R
 import com.example.carrentalapp.utils.Orientation
 import com.example.carrentalapp.utils.addMoveAnimation
+import network.chaintech.sdpcomposemultiplatform.sdp
 
 @Composable
 fun SplashScreen() {
-
+    // Use remember to avoid recomputation
+    val appLogoMargin =  100.sdp
+    val carLogoMargin = 35.sdp
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -32,11 +35,13 @@ fun SplashScreen() {
             )
     ) {
         val (logoCarRef, logoAppRef) = createRefs()
+
+
         Box(
             Modifier
                 .wrapContentSize()
                 .constrainAs(logoAppRef) {
-                    top.linkTo(parent.top, margin = 200.dp)
+                    top.linkTo(parent.top, margin = appLogoMargin)
                     start.linkTo(parent.start, margin = 65.dp)
                     end.linkTo(parent.end, margin = 65.dp)
                     width = Dimension.fillToConstraints
@@ -53,7 +58,7 @@ fun SplashScreen() {
 
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
-                bottom.linkTo(parent.bottom, margin = 70.dp)
+                bottom.linkTo(parent.bottom, margin = carLogoMargin)
                 width = Dimension.fillToConstraints
 
 
