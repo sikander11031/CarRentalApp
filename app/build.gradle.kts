@@ -69,4 +69,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     //constraint layout
     implementation ("androidx.constraintlayout:constraintlayout-compose:1.1.0")
+     //Sdp,Ssp
+    implementation("network.chaintech:sdp-ssp-compose-multiplatform:1.0.4")
+
+
 }

@@ -2,6 +2,8 @@ package com.example.carrentalapp.utils
 
 import androidx.compose.animation.core.TweenSpec
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.offset
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
@@ -11,6 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.unit.Dp
 
 
@@ -47,3 +50,36 @@ fun Modifier.addMoveAnimation(
 }
 
 
+
+
+
+//fun Modifier.addFadeAnimation(from: Float, to: Float, duration: Int): Modifier = composed {
+//    var contentAlpha by remember { mutableStateOf(from) }
+//    val animatedContentAlpha by animateFloatAsState(
+//        targetValue = contentAlpha,
+//        animationSpec = TweenSpec(
+//            durationMillis = duration,
+//        )
+//    ).also {
+//        contentAlpha = to
+//    }
+//    this.alpha(animatedContentAlpha)
+//}
+
+
+fun Modifier.addFadeAnimation(from: Float, to: Float, duration: Int): Modifier = composed {
+    var contentAlpha by remember { mutableStateOf(from) }
+    val animatedContentAlpha by animateFloatAsState(
+        targetValue = contentAlpha,
+        animationSpec = tween(
+            durationMillis = duration,
+        )
+    )
+
+    // Launch a coroutine to change the contentAlpha to the target value, triggering the animation
+    LaunchedEffect(Unit) {
+        contentAlpha = to
+    }
+
+    this.alpha(animatedContentAlpha)
+}
