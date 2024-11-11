@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.carrentalapp.app.presentation.intro.splash.SplashScreen
+import com.example.carrentalapp.app.presentation.intro.onboarding.OnBoardingScreen
 import com.example.carrentalapp.ui.theme.CarRentalAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CarRentalAppTheme {
-                SplashScreen()
+                OnBoardingScreen()
+            //         SplashScreen()
             }
         }
     }
