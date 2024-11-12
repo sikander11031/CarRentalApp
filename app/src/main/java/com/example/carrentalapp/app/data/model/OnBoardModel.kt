@@ -7,7 +7,6 @@ import androidx.compose.runtime.Stable
 @Stable
 @Immutable
 data class OnBoardModel(
-
     @DrawableRes val image: Int,
     val title: String,
 )
